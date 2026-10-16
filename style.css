@@ -1,0 +1,56 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --ink: #122033;
+  --muted: #5d6b7c;
+  --line: #d7e0ea;
+  --blue: #1565c0;
+  --blue-2: #0d47a1;
+  --ok: #1b8a4a;
+  --warn: #c62828;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+.wrap { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 60px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { margin: 0; font-size: 32px; }
+.lead { color: var(--muted); margin: 6px 0 0; }
+.tabs { display: flex; gap: 8px; margin: 22px 0; flex-wrap: wrap; }
+.tabs button, .btn {
+  border: 0; border-radius: 10px; padding: 12px 16px; font-weight: 700; cursor: pointer;
+}
+.tabs button { background: #e7eef6; color: var(--ink); }
+.tabs button.active { background: var(--blue); color: white; }
+.panel {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px;
+  box-shadow: 0 8px 24px rgba(18, 32, 51, 0.05);
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+input, select {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-size: 15px;
+}
+.btn { background: var(--blue); color: white; margin-top: 14px; }
+.btn.secondary { background: #e7eef6; color: var(--ink); }
+.btn.warn { background: var(--warn); }
+.screen { display: none; }
+.screen.active { display: block; }
+.card {
+  border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-top: 12px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;
+}
+.placa { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+.meta { color: var(--muted); font-size: 14px; }
+.status { color: var(--ok); font-weight: 700; }
+.erro { color: var(--warn); min-height: 20px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); font-size: 14px; }
+@media (max-width: 700px) {
+  .grid, .card { grid-template-columns: 1fr; }
+  h1 { font-size: 26px; }
+}
