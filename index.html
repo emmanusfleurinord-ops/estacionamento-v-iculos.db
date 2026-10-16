@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estacionamento de Veículos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Estacionamento de Veículos</h1>
+        <p class="lead">Controle de vagas, placas, clientes e valores com SQLite.</p>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="active" type="button" data-tela="entrada">Entrada</button>
+      <button type="button" data-tela="patio">Pátio</button>
+      <button type="button" data-tela="relatorio">Relatório</button>
+    </div>
+
+    <section id="entrada" class="screen active">
+      <form class="panel" id="formEntrada">
+        <div class="grid">
+          <div>
+            <label for="nome">Nome do cliente</label>
+            <input id="nome" maxlength="40" placeholder="Ex: Ana" />
+          </div>
+          <div>
+            <label for="telefone">Telefone</label>
+            <input id="telefone" maxlength="20" placeholder="Ex: 11999990000" />
+          </div>
+          <div>
+            <label for="placa">Placa</label>
+            <input id="placa" maxlength="8" placeholder="Ex: ABC1D23" />
+          </div>
+          <div>
+            <label for="tipo">Tipo do veículo</label>
+            <select id="tipo">
+              <option value="carro">Carro</option>
+              <option value="moto">Moto</option>
+              <option value="van">Van</option>
+            </select>
+          </div>
+          <div>
+            <label for="marca">Marca</label>
+            <input id="marca" maxlength="30" placeholder="Ex: Fiat" />
+          </div>
+          <div>
+            <label for="modelo">Modelo</label>
+            <input id="modelo" maxlength="30" placeholder="Ex: Argo" />
+          </div>
+          <div>
+            <label for="cor">Cor</label>
+            <input id="cor" maxlength="20" placeholder="Ex: Prata" />
+          </div>
+          <div>
+            <label for="ano">Ano</label>
+            <input id="ano" type="number" min="1980" max="2026" placeholder="2020" />
+          </div>
+          <div>
+            <label for="tamanho">Tamanho</label>
+            <select id="tamanho">
+              <option value="pequeno">Pequeno</option>
+              <option value="medio" selected>Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+          <div>
+            <label for="tipo_vaga">Tipo da vaga</label>
+            <select id="tipo_vaga">
+              <option value="normal">Normal</option>
+              <option value="preferencial">Preferencial</option>
+              <option value="moto">Moto</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+          <div>
+            <label for="tipo_preco">Cobrança</label>
+            <select id="tipo_preco">
+              <option value="hora">Por hora — R$ 8</option>
+              <option value="diaria">Diária — R$ 40</option>
+              <option value="mensal">Mensal — R$ 280</option>
+              <option value="anual">Anual — R$ 2400</option>
+            </select>
+          </div>
+        </div>
+        <p class="erro" id="erroEntrada"></p>
+        <button class="btn" type="submit">Registrar entrada</button>
+        <p class="status" id="okEntrada"></p>
+      </form>
+    </section>
+
+    <section id="patio" class="screen">
+      <div class="panel">
+        <h2>Veículos no pátio</h2>
+        <div id="listaPatio">Carregando...</div>
+      </div>
+    </section>
+
+    <section id="relatorio" class="screen">
+      <div class="panel">
+        <h2>Relatório de movimentações</h2>
+        <div id="listaRelatorio">Carregando...</div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
